@@ -16,5 +16,30 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "render": "file:./render.php",
-  "viewScriptModule": "file:./view.js"
+  "viewScriptModule": "file:./view.js",
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "answers": {
+      "type": "array",
+      "default": [
+        {
+          "name": ""
+        }
+      ]
+    },
+    "correctAnswer": {
+      "type": "string",
+      "default": null
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "#EBEBEB"
+    },
+    "theAlign": {
+      "type": "string",
+      "default": "left"
+    }
+  }
 }
