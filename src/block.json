@@ -24,20 +24,18 @@
 		"answers": {
 			"type": "array",
 			"default": [
-				{
-					"name": ""
-				}
+				""
 			]
 		},
 		"correctAnswer": {
-			"type": "string",
-			"default": null
+			"type": "number",
+			"default": ""
 		},
 		"bgColor": {
 			"type": "string",
 			"default": "#EBEBEB"
 		},
-		"theAlign": {
+		"theAlignment": {
 			"type": "string",
 			"default": "left"
 		}

@@ -14,13 +14,24 @@
 $unique_id = wp_unique_id( 'p-' );
 
 print_r($attributes);
+
+$answers = array();
+for ($i = 0; $i < count($attributes['answers']); $i++) {
+	$answers[$i]['index'] = $i;
+	$answers[$i]['name'] = $attributes['answers'][$i];
+	$answers[$i]['correct'] = $attributes['correctAnswer'] === $i;
+}
+$ourContext = array('answers' => $answers, 'solved' => false, 'showCongrats' => false, 'showSorry' => false, 'correctAnwer' => $attributes['correctAnswer']);
+
 ?>
 
-<div style="background-color: <?php echo $attributes['bgColor']; ?>" class="posts-quiz-frontend" data-wp-interactive="create-block" <?php echo wp_interactivity_data_wp_context($attributes); ?>>
+<div style="background-color: <?php echo $attributes['bgColor']; ?>" class="posts-quiz-frontend" data-wp-interactive="create-block" <?php echo wp_interactivity_data_wp_context($ourContext); ?>>
 	<p> <?php echo $attributes['question']; ?> </p>
 	<ul>
-		<template data-wp-each="context.answers">
-			<li data-wp-on--click="actions.guessAttempt" data-wp-text="context.item.name"></li>
-		</template>
+		<?php
+			foreach($attributes['answers'] as $answer) { ?>
+				<li data-wp-context='{}' data-wp-on--click="actions.guessAttempt"><?php echo $answer; ?></li>
+			<?php }
+		?>
 	</ul>
 </div>

@@ -12,7 +12,7 @@ const { state } = store('create-block', {
 	actions: {
 		guessAttempt: () => {
 			const context = getContext();
-			console.log(context.item.name);
+			console.log(context);
 		},
 		toggleOpen() {
 			const context = getContext();
