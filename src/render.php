@@ -12,9 +12,15 @@
 
 // Generates a unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
+
+print_r($attributes);
 ?>
 
-<div data-wp-interactive="create-block" data-wp-context='{"clickCount": 0}'>
-	<p> Clicked <span data-wp-text="context.clickCount"></span> times </p>
-	<button data-wp-on--click="actions.btnHandler"> Click Me </button>
+<div style="background-color: <?php echo $attributes['bgColor']; ?>" class="posts-quiz-frontend" data-wp-interactive="create-block" <?php echo wp_interactivity_data_wp_context($attributes); ?>>
+	<p> <?php echo $attributes['question']; ?> </p>
+	<ul>
+		<template data-wp-each="context.answers">
+			<li data-wp-on--click="actions.guessAttempt" data-wp-text="context.item.name"></li>
+		</template>
+	</ul>
 </div>

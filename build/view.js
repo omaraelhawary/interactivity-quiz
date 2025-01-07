@@ -71,9 +71,9 @@ const {
     }
   },
   actions: {
-    btnHandler: () => {
+    guessAttempt: () => {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      context.clickCount++;
+      console.log(context.item.name);
     },
     toggleOpen() {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
