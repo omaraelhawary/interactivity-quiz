@@ -73,7 +73,17 @@ const {
   actions: {
     guessAttempt: () => {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
-      console.log(context);
+      if (!context.solved) {
+        if (context.index === context.correctAnswer) {
+          context.showCongrats = true;
+          context.solved = true;
+        } else {
+          context.showSorry = true;
+          setTimeout(() => {
+            context.showSorry = false;
+          }, 2600);
+        }
+      }
     },
     toggleOpen() {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
