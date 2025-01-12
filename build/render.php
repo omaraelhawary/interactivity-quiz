@@ -13,6 +13,10 @@
 // Generates a unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
 
+wp_interactivity_state('create-block', array(
+	'solvedCount' => 0
+));
+
 $answers = array();
 for ($i = 0; $i < count($attributes['answers']); $i++) {
 	$answers[$i]['index'] = $i;
