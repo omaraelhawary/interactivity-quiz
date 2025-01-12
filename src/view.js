@@ -43,6 +43,10 @@ const { state } = store('create-block', {
 			const context = getContext();
 			return context.solved && context.correct
 		},
+		showSvg: () => {
+			const context = getContext();
+			return !context.solved && context.correct
+		},
 		logIsOpen: () => {
 			const { isOpen } = getContext();
 			// Log the value of `isOpen` each time it changes.

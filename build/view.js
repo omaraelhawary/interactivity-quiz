@@ -104,6 +104,10 @@ const {
       const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
       return context.solved && context.correct;
     },
+    showSvg: () => {
+      const context = (0,_wordpress_interactivity__WEBPACK_IMPORTED_MODULE_0__.getContext)();
+      return !context.solved && context.correct;
+    },
     logIsOpen: () => {
       const {
         isOpen
